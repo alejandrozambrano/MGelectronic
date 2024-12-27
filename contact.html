@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>CONTACT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="app.js" type="text/javascript"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init({
+          publicKey:"6oGbdE8qvz1kwpN45"
+        });
+      })();
+     </script>
+    
+</head>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+/* Header */
+header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .logo {
+      max-width: 13rem;
+      padding-left: 3rem;
+    }
+
+    .nav-list {
+      list-style-type: none;
+      display: flex;
+      gap: 4rem;
+      font-size: 16px;
+      margin-top: 1rem;    
+      margin-right: 2.5rem; 
+    }
+
+    .nav-list li a {
+      text-decoration: none;
+      color: #1c1c1c;
+    }
+
+    .nav-list ul li p {
+      padding: 5px;
+      font-size: 12px;
+    }  
+
+    .nav-list :hover {
+      text-decoration: underline;
+    }
+
+    .abrir-menu,
+    .cerrar-menu {
+      display: none;
+    } 
+
+    .flag {
+    width: 24px;
+    height: 13px;
+    border-radius: 2px;
+    display: flex;
+    margin-top: .3rem;  
+  }
+
+  .nav-list li ul li {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  }
+
+  .nav-list li ul li:nth-child(1) {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-bottom: 10px;
+  }
+
+
+.nav-list li ul li p {
+  margin: 0;
+  }
+
+.nav-list li:nth-last-child(2){ /* Seleccionamos solo el último elemento del menú, que es el enlace de "Contact" */
+  display: block; /* Mostramos solo este elemento */
+  text-decoration: underline; /* Agregamos una línea debajo del enlace */
+}
+
+
+
+/*SUBMENU*/
+
+.nav-list li {
+  position: relative; /* Agregamos position relative para que el submenu se posicione correctamente */
+}
+
+.nav-list li ul {
+  position: absolute; /* Agregamos position absolute para que el submenu se muestre encima del header */
+  top: 100%; /* Posicionamos el submenu debajo del elemento padre */
+  left: 0; /* Posicionamos el submenu alineado con el elemento padre */
+  background-color: #fff; /* Agregamos un fondo blanco para que el submenu se vea correctamente */
+  padding: 10px; /* Agregamos un padding para que el submenu tenga espacio */
+  border: 1px solid #ddd; /* Agregamos un borde para que el submenu se vea correctamente */
+  display: none; /* Ocultamos el submenu por defecto */
+  z-index: 3;
+  border-radius: 5px;
+}
+
+
+.nav-list li:hover ul {
+  display: block; /* Mostramos el submenu cuando se pasa el mouse sobre el elemento padre */
+}
+
+/* contact*/
+
+.main_contact_container {
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: 55vh;
+    background-image: url(./img/ai-g24f7b1d41_1920-AzG1O95lPkf1NO57.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.main_contact_container h2 {
+    position: absolute;
+    color: white;
+    margin-top: 80px;
+    margin-left: 80px;
+    padding-top: 13px;
+    padding-left: 9px;
+    text-align: center;
+    font-size: 38px; 
+    background-color: black;
+    width: 240px;
+    height: 9vh;
+}
+
+/*Formaulaire*/
+
+.container {
+    background-color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+/* Estilo de los productos */
+.producto-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    position: relative;
+    gap: 15px;  /* Espaciado entre el checkbox y la imagen */
+}
+
+/* Alinear checkbox a la izquierda */
+.producto-item input[type="checkbox"] {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Ajustar el tamaño de la imagen */
+.producto-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;  /* Asegura que la imagen mantenga la proporción */
+}
+
+/* Estilizar la sección de información */
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.producto-info strong {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.producto-info p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Estilo de campos de entrada y botón */
+input, textarea, button {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+  background-color: #c0392b;
+  border: none;
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 20px auto;  /* Centrado horizontal */
+  cursor: pointer;
+  border-radius: 40px;
+  width: auto;  /* Ancho automático según el texto */
+  padding: 10px 30px;  /* Ajuste de padding para el botón */
+}
+
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Styles location */
+
+.main_location_continer{
+    background-color: black;
+}
+
+.main_location_continer {
+    color:white;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+.main_location_continer iframe {
+   padding: 30px;
+}
+
+/* styles Contact_us*/
+.container_Contact_Us {
+    text-align: center;
+}
+
+
+.container_Contact_Us img {
+    padding: 10px;
+    width: 850px;
+    height: 250px;
+}
+
+footer {
+    background-color: black;
+    padding: 60px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.container-main-footer {
+    padding-left: 160px;
+    padding-right: 160px;
+    display:flex;
+    text-align: end;
+    margin-left: 30px;
+    margin-right: 30px;  
+}
+
+.container-main-footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container-main-footer div {
+    display: inline-block;
+    width: 49.5%;
+    height: 100%;
+}
+
+.contact-left {
+    text-align:start;
+}
+
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    padding-left: 50px;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+    border: 0;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .abrir-menu {
+    color:  #1c1c1c;
+  }
+
+  .cerrar-menu {
+    color:  #cecece;
+  }
+
+  .nav {
+    opacity: 0;
+   visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color:  #1c1c1c;
+    z-index: 2;
+    border-radius: 0  0 0 20px;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5) ;
+
+  }
+  
+  .nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-list {
+    flex-direction: column;
+    align-items: end;
+  }
+  .nav li a {
+    color: #cecece;
+  }
+}
+
+@media (max-width: 650px) {
+  .main_contact_container h2 {
+    font-size: 22px;
+    padding-top: 20px;
+    text-align: center;
+    width: 140px;
+  }
+
+}
+
+    </style>
+
+<body>
+    <header>
+        <a href="./index.html"> <img class="logo" src="./img/logo-mgelectronic-AE0XEeGB9NtlXOPG.webp" alt="logo"></a>       
+        <button id="abrir" class="abrir-menu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg></i></button>
+        <nav class="nav" id="nav">
+          <button id="cerrar" class="cerrar-menu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+          </svg></button>
+          <ul class="nav-list">
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li><a href="./products.html">Products</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./index.html"><img src="./img/us.svg" alt="flag" class="flag"></a>
+              <ul>
+                <li><a href="./index.html"><img src="./img/us.svg" alt="flag" class="flag"></a><p>English</p></li>
+                <li><a href="./index.html"><img src="./img/fr.svg" alt="flag" class="flag"></a><p>Francais</p></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+       </header>
+    <main>
+        <section class="main_contact_container">    
+                <h2>CONTACT</h2>                     
+        </section>
+        <div class="container">
+          <h1>Get in touch</h1>
+          
+          <form id="cotizacionForm">
+              <label>Select one or more products:</label>
+              
+              <!-- Producto A -->
+              <label class="producto-item">
+                  <input type="checkbox" name="producto" value="Producto A">
+                  <img src="./img/T-Edge10TabletopAutoclave .jpeg" alt="Producto A">
+                  <div class="producto-info">
+                      <strong>T-Edge 10 Tabletop Autoclave</strong>
+                      <p>The T-Edge 10 is a Class B autoclave that offers maximum efficiency with minimal costs.
+                        It enables fully automated sterilization with just one click and adapts to small spaces thanks to its compact and sleek design.
+                        Features an easy-to-use touchscreen interface and multiple connectivity options, including built-in Wi-Fi.</p>
+                  </div>
+              </label>
+  
+              <!-- Producto B -->
+              <label class="producto-item">
+                  <input type="checkbox" name="producto" value="Producto B">
+                  <img src="./img/Elara11DTabletopAutoclave.jpeg" alt="Producto B">
+                  <div class="producto-info">
+                      <strong>Elara 11D Tabletop Autoclave</strong>
+                      <p>Provides maximum performance in minimal space, with 30% additional capacity in the trays.
+                        This autoclave significantly enhances productivity and budgets for medical and dental clinics.</p>
+                  </div>
+              </label>
+  
+              <!-- Producto C -->
+              <label class="producto-item">
+                  <input type="checkbox" name="producto" value="Producto C">
+                  <img src="./img/5596HospitalAutoclave.jpeg" alt="Producto C">
+                  <div class="producto-info">
+                      <strong>5596 Hospital Autoclave</strong>
+                      <p>With a narrow design and a 250-liter chamber, this autoclave is ideal for sterile supply departments in hospitals.
+                        Offers optimized cycles ensuring efficient and safe sterilization.</p>
+                  </div>
+              </label>
+
+              <label class="producto-item">
+                <input type="checkbox" name="producto" value="Producto D">
+                <img src="./img/TIVA2 Washer-Disinfector.jpeg" alt="Producto C">
+                <div class="producto-info">
+                    <strong>TIVA2 Washer-Disinfector</strong>
+                    <p>A washer-disinfector that performs washing, disinfection, and drying of dental instruments in a single cycle.
+                      Available in tabletop or under-counter versions, it is designed to minimize consumption and operational costs for small clinics or dental offices.
+                      </p>
+                </div>
+            </label>
+
+            <label class="producto-item">
+              <input type="checkbox" name="producto" value="Producto E">
+              <img src="./img/SONICA Ultrasonic Cleaners.jpeg" alt="Producto C">
+              <div class="producto-info">
+                  <strong>SONICA Ultrasonic Cleaners
+                  </strong>
+                  <p>Provides effective cleaning to remove difficult deposits on medical and laboratory instruments.
+                    Available in a wide range of models with capacities from 3 to 90 liters, ensuring uniform ultrasonic energy distribution with simple, easy-to-read controls.
+                    </p>
+              </div>
+            </label>
+
+            <label class="producto-item">
+              <input type="checkbox" name="producto" value="Producto F">
+              <img src="./img/Forced Convection Oven (Standard, OF4-S).jpeg" alt="Producto F">
+              <div class="producto-info">
+                  <strong>Forced Convection Oven (Standard, OF4-S)
+                  </strong>
+                  <p>Affordable and reliable oven providing temperature control up to 250°C.
+                    Features a 3.5-inch touch controller for intuitive operation.
+                    Ideal for general laboratory use.
+                    </p>
+              </div>
+            </label>
+
+            <label class="producto-item">
+              <input type="checkbox" name="producto" value="Producto G">
+              <img src="./img/Temperature & Humidity Chamber (Low Temp. TH-G).jpeg" alt="Producto G">
+              <div class="producto-info">
+                  <strong> Temperature & Humidity Chamber (Low Temp. TH-G)
+                  </strong>
+                  <p>Environmental chamber with a temperature range of -35°C to 150°C and humidity control (25% to 95% RH).
+                    Suitable for long-term, sophisticated test cycles.
+                    </p>
+              </div>
+            </label>
+
+            <label class="producto-item">
+              <input type="checkbox" name="producto" value="Producto G">
+              <img src="./img/Forced Convection Oven (Multi Type, OF-02G-2C).jpeg" alt="Producto G">
+              <div class="producto-info">
+                  <strong> Forced Convection Oven (Multi Type, OF-02G-2C)
+                  </strong>
+                  <p>Dual-chamber oven (2 x 60L) for space-saving and cost-effective laboratory solutions.
+                    Temperature range: Ambient +10°C to 200°C.
+                    Ideal for labs with limited space and budget.
+                    </p>
+              </div>
+            </label>
+
+            <label class="producto-item">
+              <input type="checkbox" name="producto" value="Producto G">
+              <img src="./img/Fume Hood, Small (PMH-720).jpeg" alt="Producto G">
+              <div class="producto-info">
+                  <strong> Fume Hood, Small (PMH-720)
+                  </strong>
+                  <p>Lightweight and compact tabletop fume hood.
+                    Cost-effective and easy to relocate.
+                    Designed for safe handling of strong acids and corrosive samples.
+                    </p>
+              </div>
+            </label>
+  
+              <!-- Campos Adicionales -->
+              <label for="nombre">Name:</label>
+              <input type="text" id="nombre" required>
+  
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" required>
+  
+              <label for="celular">Cell phone number:</label>
+              <input type="tel" id="celular" required>
+  
+              <label for="mensaje">Messaje:</label>
+              <textarea id="mensaje" rows="5" placeholder="write your message here..."></textarea>
+  
+              <button type="submit">Send request</button>
+          </form>
+      </div>
+      <section class="main_location_continer">
+        <h1>Let's talk about your project</h1>
+        <iframe 
+          src="https://www.google.com/maps?q=Montréal,+QC+H3X+2L3&output=embed" 
+          width="60%" 
+          height="400" 
+          frameborder="0" 
+          style="border:0;" 
+          allowfullscreen>
+        </iframe>
+    </section>
+    
+        <center>
+            <div class="row" style="background-color:white;">
+                <div class="col-md-12" style="padding: 30px;">
+                    <section>
+                      <a href="contact.html" style="text-decoration: none; color: inherit;">
+                        <button class="button"   
+                                style="background-color:#CF0212; border-radius: 5px; width: 120px; height: 40px; border: none; color: white;">
+                            Contact Us
+                        </button>
+                    </a>
+                    
+                    </section>
+                </div>
+                <div class="col-md-12">
+                    <section>
+                        <img src="./img/logo-mgelectronic-AE0XEeGB9NtlXOPG.webp" alt="logo" class="img-fluid mx-auto d-block w-50 lg:w-15 xl:w-5">
+                    </section>
+                </div>   
+            </div>
+        </center>
+    </main>
+    <footer> 
+        <center>
+            <div class="row">
+                <!-- Columna 1: Powered by Zyro.com -->
+                <div class="col-md-6">
+                  <section>
+                    <p class="powered" style="text-decoration: none; color: #FFFFFF;">Powered by <a href="https://zyro.com" target="_blank" style="text-decoration: none; color: #FFFFFF;">Zyro.com</a></p>
+                  </section>
+                </div>
+              
+                <!-- Columna 2: Información de contacto y redes sociales -->
+                <div class="col-md-6">
+                  <section>
+                    <address style="text-decoration: none; color: #FFFFFF;">
+                      <p>Write us: <a href="mailto:info@mgelectronic.tech" style="text-decoration: none; color: #FFFFFF;">info@mgelectronic.tech</a></p>
+                      <p>Call us: <a href="tel:+1-438-493-7633" style="text-decoration: none; color: #FFFFFF;">+1-438-493-7633</a></p>
+                      <p>Montreal, Quebec</p>
+                    </address>
+              
+                    <!-- Redes sociales -->
+                    <div class="social-links">
+                      <!-- Facebook -->
+                      <a href="#" target="_blank" style="margin-right: 25px; text-decoration: none; color: #FFFFFF;">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg" alt="Facebook" class="img-fluid mx-auto" style="filter: invert(1); width: 30px; height: 30px;">
+                      </a>
+              
+                      <!-- Instagram -->
+                      <a href="#" target="_blank" style="margin-right: 25px; text-decoration: none; color: #FFFFFF;">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" alt="Instagram" class="img-fluid mx-auto" style="filter: invert(1); width: 30px; height: 30px;">
+                      </a>
+              
+                      <!-- Twitter -->
+                      <a href="#" target="_blank" style="text-decoration: none; color: #FFFFFF;">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="Twitter" class="img-fluid mx-auto" style="filter: invert(1); width: 30px; height: 30px;">
+                      </a>
+                    </div>
+                  </section>
+                </div>
+              </div>
+        </center>
+         
+    </footer>
+    <script>
+
+        const nav = document.querySelector("#nav");
+        const abrir = document.querySelector("#abrir");
+        const cerrar = document.querySelector("#cerrar");
+    
+
+        abrir.addEventListener("click", () => {
+            nav.classList.add("visible");
+        }) 
+
+        cerrar.addEventListener("click", () => {
+            nav.classList.remove("visible");
+        });
+    
+
+        </script>
+</body>
+</html>
